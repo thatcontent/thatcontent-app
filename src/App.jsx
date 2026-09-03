@@ -12,9 +12,10 @@ import FreeAudit from './sections/FreeAudit';
 
 function App() {
   return (
-    <div className="relative w-full">
+    // Update this top-level div
+    <div className="relative w-full max-w-[100vw] overflow-x-hidden bg-[#07070A]">
       <Header />
-      <main>
+      <main className="w-full">
         <Hero />
         <Problem />
         <Differentiation />
@@ -29,5 +30,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
