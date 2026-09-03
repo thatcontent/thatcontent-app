@@ -33,23 +33,6 @@ export default function FreeAudit() {
   return (
     <section id="audit" className="relative py-24 px-6 overflow-hidden">
       {/* Component-level keyframes */}
-      <style>{`
-        @keyframes fadeInUp {
-          from { opacity: 0; transform: translateY(40px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade-in-up {
-          animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-          opacity: 0;
-        }
-        @keyframes breatheGlow {
-          0%, 100% { opacity: 0.4; transform: scale(1); }
-          50% { opacity: 0.7; transform: scale(1.15); }
-        }
-        .animate-breathe-glow {
-          animation: breatheGlow 5s ease-in-out infinite;
-        }
-      `}</style>
 
       {/* Brand Conversion Glow */}
       <div className="absolute top-1/2 right-1/4 w-[400px] h-[400px] bg-[#EA580C]/15 rounded-full blur-[120px] -z-10 pointer-events-none animate-breathe-glow" />
