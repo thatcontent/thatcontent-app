@@ -41,7 +41,7 @@ export default function Hero() {
         className="hidden lg:flex absolute left-10 xl:left-24 top-1/2 -translate-y-1/2 glass-panel p-4 items-center gap-4 animate-float-dash border border-white/10 bg-[#07070A]/80 backdrop-blur-md shadow-xl" 
         style={{ animationDelay: '0ms' }}
       >
-        <div className="w-12 h-12 rounded-xl bg-purple-500/20 border border-purple-500/30 flex items-center justify-center text-purple-400 shadow-[0_0_15px_rgba(168,85,247,0.15)]">
+        <div className="w-12 h-12 rounded-xl bg-[#F97316]/20 border border-[#F97316]/30 flex items-center justify-center text-[#F97316] shadow-[0_0_15px_rgba(249,115,22,0.2)]">
           <Play size={20} className="fill-current ml-1" />
         </div>
         <div className="text-left pr-2">
@@ -59,7 +59,7 @@ export default function Hero() {
           <p className="text-sm font-bold text-white leading-tight">Dashboards</p>
           <p className="text-xs text-[var(--color-text-secondary)] mt-0.5">Data & Insights</p>
         </div>
-        <div className="w-12 h-12 rounded-xl bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 shadow-[0_0_15px_rgba(59,130,246,0.15)] order-2">
+        <div className="w-12 h-12 rounded-xl bg-[#F97316]/20 border border-[#F97316]/30 flex items-center justify-center text-[#F97316] shadow-[0_0_15px_rgba(249,115,22,0.2)] order-2">
           <LayoutDashboard size={20} />
         </div>
       </div>
