@@ -6,12 +6,11 @@ const packages = [
     price: "499",
     desc: "For businesses that need to become consistent.",
     features: [
-      "Monthly content strategy",
-      "Social media content",
-      "Reels, Posts & Stories",
-      "Captions & Copywriting",
-      "Scheduling & publishing",
-      "Basic engagement",
+      "1x 30-min strategy & onboarding call",
+      "8 posts + 4 reels per month",
+      "Custom captions & copywriting",
+      "Automated scheduling & publishing",
+      "Basic audience engagement",
       "Monthly performance report"
     ],
     cta: "Build My Visibility",
@@ -24,14 +23,11 @@ const packages = [
     desc: "For businesses ready to become a trusted name in their market.",
     features: [
       "Everything in Visibility",
-      "Higher content volume",
-      "Increased Reel focus",
-      "Advanced content strategy",
-      "Educational & authority content",
-      "Competitor/content research",
-      "Community engagement",
-      "Monthly strategy review",
-      "Performance optimization"
+      "12 posts + 8 reels per month",
+      "1x 45-min monthly strategy review",
+      "Competitor & content research",
+      "Proactive community engagement",
+      "Performance optimization tuning"
     ],
     cta: "Build My Authority",
     highlight: true
@@ -42,13 +38,11 @@ const packages = [
     desc: "For businesses that want a dedicated organic content partner.",
     features: [
       "Everything in Authority",
-      "Highest content volume",
-      "Heavy video content focus",
-      "Advanced content planning",
-      "Dedicated Content series",
-      "Deeper analytics & insights",
-      "Priority support",
-      "Strategic growth partnership"
+      "5–7 content pieces per week",
+      "10-14 day priority onboarding",
+      "Dedicated ongoing video series",
+      "Deeper analytics & audience insights",
+      "Priority email & Slack support"
     ],
     cta: "Become a Growth Partner",
     highlight: false
@@ -58,25 +52,6 @@ const packages = [
 export default function Pricing() {
   return (
     <section id="packages" className="relative py-24 px-6 overflow-hidden">
-      {/* Component-level keyframes for smooth entrance */}
-      <style>{`
-        @keyframes fadeInUp {
-          from { opacity: 0; transform: translateY(40px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade-in-up {
-          animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-          opacity: 0;
-        }
-        @keyframes subtlePulse {
-          0%, 100% { box-shadow: 0 0 15px rgba(249,115,22,0.4); }
-          50% { box-shadow: 0 0 30px rgba(249,115,22,0.8); }
-        }
-        .animate-glow-pulse {
-          animation: subtlePulse 3s infinite;
-        }
-      `}</style>
-
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in-up">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Simple Monthly Content Plans.</h2>
