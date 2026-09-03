@@ -15,7 +15,7 @@ export default function Header() {
           <img 
             src="/logo.png" 
             alt="ThatContent Logo" 
-            className="h-10 w-auto object-contain" 
+            className="h-16 w-auto object-contain" 
           />
         </div>
 
