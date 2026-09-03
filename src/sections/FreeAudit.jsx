@@ -1,6 +1,35 @@
 import { Check } from 'lucide-react';
+import { useState } from 'react';
 
 export default function FreeAudit() {
+  const [status, setStatus] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('Sending request...');
+    
+    const formData = new FormData(e.target);
+    formData.append("access_key", "9085f4f5-3f5d-4536-af65-64389071619a"); 
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+      
+      if (data.success) {
+        setStatus('Success! We will review your details and reach out shortly.');
+        e.target.reset();
+      } else {
+        setStatus('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      setStatus('Error submitting form. Please check your connection.');
+    }
+  };
+
   return (
     <section className="relative py-24 px-6">
       {/* Brand Conversion Glow */}
@@ -14,7 +43,7 @@ export default function FreeAudit() {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
               Not Sure What's Holding Your Instagram Back?
             </h2>
-            <p className="text-lg text-text-secondary mb-8">
+            <p className="text-lg text-[var(--color-text-secondary)] mb-8">
               Get a free personalized Instagram Growth Audit and discover exactly where your content can improve.
             </p>
             
@@ -32,21 +61,60 @@ export default function FreeAudit() {
 
           {/* Right: The Form */}
           <div className="bg-[#07070A]/50 rounded-2xl p-6 border border-white/5">
-            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-4" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <input type="text" placeholder="Name" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#EA580C]/50 transition-colors" />
-                <input type="text" placeholder="Business Name" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#EA580C]/50 transition-colors" />
+                <input 
+                  type="text" 
+                  name="name"
+                  required
+                  placeholder="Name" 
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#EA580C]/50 transition-colors" 
+                />
+                <input 
+                  type="text" 
+                  name="business_name"
+                  placeholder="Business Name" 
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#EA580C]/50 transition-colors" 
+                />
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <input type="email" placeholder="Email" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#EA580C]/50 transition-colors" />
-                <input type="tel" placeholder="Phone" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#EA580C]/50 transition-colors" />
+                <input 
+                  type="email" 
+                  name="email"
+                  required
+                  placeholder="Email" 
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#EA580C]/50 transition-colors" 
+                />
+                <input 
+                  type="tel" 
+                  name="phone"
+                  placeholder="Phone" 
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#EA580C]/50 transition-colors" 
+                />
               </div>
-              <input type="text" placeholder="Instagram Handle (@)" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#EA580C]/50 transition-colors" />
-              <textarea placeholder="Biggest Social Media Challenge" rows={3} className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#EA580C]/50 transition-colors resize-none"></textarea>
+              <input 
+                type="text" 
+                name="instagram_handle"
+                placeholder="Instagram Handle (@)" 
+                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#EA580C]/50 transition-colors" 
+              />
+              <textarea 
+                name="challenge"
+                required
+                placeholder="Biggest Social Media Challenge" 
+                rows={3} 
+                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#EA580C]/50 transition-colors resize-none"
+              ></textarea>
               
               <button type="submit" className="w-full py-4 rounded-xl bg-gradient-to-r from-[#EA580C] to-[#F97316] text-black font-bold text-lg hover:shadow-[0_0_30px_rgba(249,115,22,0.3)] transition-all duration-300 mt-2">
                 Get My Free Audit
               </button>
+
+              {status && (
+                <p className="text-center text-sm mt-4 font-medium text-[#F97316]">
+                  {status}
+                </p>
+              )}
             </form>
           </div>
 
